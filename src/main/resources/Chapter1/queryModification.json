@@ -1,0 +1,78 @@
+[
+  //简单查询匹配 /sf/employee/_search?pretty POST
+  {
+    "query": {
+      "match": {
+        "last_name": "Zhang"
+      }
+    }
+  },
+  //字头匹配 /sf/employee/_search?pretty POST
+  {
+    "query": {
+      "prefix": {
+        "last_name": "z"
+      }
+    }
+  },
+  //查看所有字段属性类型 /sf/employee/_mapping?pretty
+
+  //字头匹配，加上改写 /sf/employee/_search?pretty POST
+  {
+    //每个转化为布尔查询的一个或从句，评分各自计算，消耗大量CPU
+    //布尔查询限制从句不超过1024
+    "query": {
+      "prefix": {
+        "last_name": {
+          "value": "z",
+          "rewrite": "scoring_boolean"
+        }
+      }
+    }
+  },
+  {
+    //每个转化为布尔查询的一个或从句，评分为权重，默认为1
+    //布尔查询限制从句不超过1024
+    "query": {
+      "prefix": {
+        "last_name": {
+          "value": "z",
+          "rewrite": "constant_score_boolean"
+        }
+      }
+    }
+  },
+  {
+    //遍历词项建立过滤器
+    "query": {
+      "prefix": {
+        "last_name": {
+          "value": "z",
+          "rewrite": "constant_score_filter"
+        }
+      }
+    }
+  },
+  {
+    //基于scoring_boolean，但只保存前N项
+    "query": {
+      "prefix": {
+        "last_name": {
+          "value": "z",
+          "rewrite": "top_terms_N"
+        }
+      }
+    }
+  },
+  {
+    //基于constant_score_boolean，只保留前N项
+    "query": {
+      "prefix": {
+        "last_name": {
+          "value": "z",
+          "rewrite": "top_terms_boost_N"
+        }
+      }
+    }
+  }
+]

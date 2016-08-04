@@ -1,0 +1,78 @@
+[
+  // /sf/employee/1 PUT
+  {
+    "first_name": "Hash",
+    "last_name": "Z",
+    "age": 24,
+    "about": "I love coding and  to swim",
+    "interests": [
+      "computer games",
+      "music"
+    ]
+  },
+  // /sf/employee/2 PUT
+  {
+    "first_name": "Dick",
+    "last_name": "Zag",
+    "age": 24,
+    "about": "I like sing song and go swimming",
+    "interests": [
+      "music",
+      "singing"
+    ]
+  },
+  // /sf/employee/3 PUT
+  {
+    "first_name": "Joshiro",
+    "last_name": "Ichigata",
+    "age": 25,
+    "about": "I love mayonazi and smoking",
+    "interests": [
+      "make rules",
+      "slash"
+    ]
+  },
+  // /sf/employee/4 PUT
+  {
+    "first_name": "Isao",
+    "last_name": "Kondo",
+    "age": 28,
+    "about": "  I like to track and chase women",
+    "interests": [
+      "women",
+      "slash"
+    ]
+  },
+  // /sf/employee/5 PUT
+  {
+    "first_name": "Sogou",
+    "last_name": "Okita",
+    "age": 23,
+    "about": "I like to trick someone",
+    "interests": [
+      "slash"
+    ]
+  },
+  // /sf/employee/6 PUT
+  {
+    "first_name": "Gintoki",
+    "last_name": "Sakata",
+    "age": 25,
+    "about": "I like comics and desert",
+    "interests": [
+      "desert",
+      "madao"
+    ]
+  },
+  // /sf/employee/7 PUT
+  {
+    "first_name": "Haoxin",
+    "last_name": "Zhang",
+    "age": 24,
+    "about": "I like rock climbing",
+    "interests": [
+      "computer games",
+      "singing"
+    ]
+  }
+]

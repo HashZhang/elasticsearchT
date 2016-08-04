@@ -1,8 +1,0 @@
-//简单查询匹配
-{
-  "query":{
-    "match":{
-      "last_name":"smith"
-    }
-  }
-}
